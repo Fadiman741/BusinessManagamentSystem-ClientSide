@@ -1,0 +1,92 @@
+<div style="margin: auto; width: 100%">
+  <div class="signup-form">
+    <form>
+      <label for="firstName">First Name:</label>
+      <input
+        type="text"
+        placeholder="First Name"
+        id="firstName"
+        name="firstName"
+        ngModel
+        required
+      />
+
+      <label for="lastName">Last Name:</label>
+      <input
+        type="text"
+        placeholder="Last Name"
+        id="lastName"
+        name="lastName"
+        ngModel
+        required
+      />
+      <label for="bussinessname">Business Name</label>
+      <input
+        type="text"
+        placeholder="Bussiness Name"
+        id="bussinessname"
+        name="bussinessname"
+        ngModel
+        required
+      />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        placeholder="Email"
+        id="email"
+        name="email"
+        ngModel
+        required
+      />
+
+      <!-- <label for="member">Register as:</label>
+      <select id="member" name="member" ngModel required>
+        <option value="Teacher">Teacher</option>
+        <option value="Tutor">Tutor</option>
+        <option value="Student">Student</option>
+        <option value="Institution">Institution</option>
+      </select> -->
+
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        placeholder="Password"
+        id="password"
+        name="password"
+        ngModel
+        required
+      />
+
+      <div class="text-center login-btn">
+        <br />
+        <button type="submit" class="btn btn-my">Sign Up</button>
+      </div>
+    </form>
+
+    <!-- Social Media Signup Options -->
+    <!-- <div class="social-media-signup">
+      <p>Or sign up with:</p>
+      <a href="#" class="social-icon"
+        ><img src="assets/social_icons/facebook.png" alt="Facebook"
+      /></a>
+      <a href="#" class="social-icon"
+        ><img src="assets/social_icons/twitter.png" alt="Twitter"
+      /></a>
+      <a href="#" class="social-icon"
+        ><img src="assets/social_icons/google.png" alt="Google"
+      /></a>
+    </div> -->
+    <br />
+    <br />
+    <div class="text-center sign-up">
+      <p style="text-align: center">
+        Already have an account?
+        <a [routerLink]="['/auth/signin']" style="color: rgb(36, 44, 158)"
+          >Sign In</a
+        >
+        here.
+      </p>
+    </div>
+  </div>
+</div>

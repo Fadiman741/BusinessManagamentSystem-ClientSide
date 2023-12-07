@@ -1,0 +1,53 @@
+<!-- <app-pagetiltle></app-pagetiltle> -->
+<div style="margin: auto; max-width: 500px">
+  <div style="padding: 40px">
+    <form>
+      <label for="email">Email : </label>
+      <input
+        type="text"
+        placeholder="Email"
+        id="email"
+        name="email"
+        ngModel
+        required
+      />
+      <br />
+
+      <label for="email">Password : </label>
+      <input type="password" id="password" name="password" ngModel required />
+      <br />
+      <br />
+      <span>Forgot Password ?</span>
+      <div class="text-center login-btn">
+        <button
+          type="submit"
+          class="btn btn-my"
+          style="height: 40px; background-color: rgb(20, 95, 100); color: #fff"
+        >
+          Sign In
+        </button>
+      </div>
+    </form>
+
+    <!-- <div class="social-media-signup">
+      <p>Or sign In with:</p>
+      <a href="#" class="social-icon"
+        ><img src="assets/social_icons/facebook.png" alt="Facebook"
+      /></a>
+      <a href="#" class="social-icon"
+        ><img src="assets/social_icons/twitter.png" alt="Twitter"
+      /></a>
+      <a href="#" class="social-icon"
+        ><img src="assets/social_icons/google.png" alt="Google"
+      /></a>
+    </div> -->
+    <div class="text-center sign-up">
+      <p style="text-align: center">
+        Don`t have an account ?
+        <a [routerLink]="['/auth/signup']" style="color: rgb(36, 44, 158)"
+          >Sign Up </a
+        >here.
+      </p>
+    </div>
+  </div>
+</div>

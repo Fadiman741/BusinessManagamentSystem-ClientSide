@@ -1,0 +1,136 @@
+<!-- <app-headers></app-headers> -->
+
+<div
+  style="
+    background-color: rgb(243, 243, 243);
+    height: 81.7vh;
+    padding: 16px;
+    background-image: linear-gradient(
+        45deg,
+        rgb(58, 62, 68),
+        rgba(58, 62, 68, 0.425)
+      ),
+      url('assets/background/1.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+  "
+>
+  <div style="padding-top: 100px">
+    <h1
+      style="padding: 16px; font-size: 65px; color: aliceblue; font-weight: 800"
+    >
+      Welcome to
+    </h1>
+    <h1
+      style="
+        font-weight: 900;
+        color: rgba(8, 82, 156, 0.863);
+        padding: 16px;
+        font-size: 70px;
+        text-shadow: -1px 1px 0 #fff, 1px 1px 0 #fff, 1px -1px 0 #fff,
+          -1px -1px 0 #fff;
+      "
+    >
+      FADIMANTECH
+    </h1>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div
+      style="
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 16px;
+        max-width: 450px;
+        margin: 16px;
+      "
+    >
+      <!-- <h1
+        style="
+          font-weight: 900;
+          text-align: center;
+          color: #fff;
+          text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+            -1px -1px 0 #000;
+        "
+      >
+        02 DECEMBER 2023
+      </h1> -->
+      <h1
+        style="
+          font-weight: 900;
+          text-align: center;
+          color: #fff;
+          text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+            -1px -1px 0 #000;
+        "
+      >
+        {{ currentDate }}
+      </h1>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column-reverse">
+    <div
+      style="
+        background-color: #fff;
+        padding: 50px;
+        border-radius: 10px;
+        margin: 20px;
+      "
+    >
+      <h2
+        style="
+          text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+            -1px -1px 0 #000;
+          color: #fff;
+        "
+      >
+        R {{ calculateTotalPrice() }} +
+      </h2>
+      <p>Revanue</p>
+    </div>
+    <div
+      style="
+        background-color: #fff;
+        padding: 50px;
+        border-radius: 10px;
+        margin: 20px;
+      "
+    >
+      <h2
+        style="
+          text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+            -1px -1px 0 #000;
+          color: #fff;
+        "
+      >
+        2000 +
+      </h2>
+      <p>Units</p>
+    </div>
+    <div
+      style="
+        background-color: #fff;
+        padding: 50px;
+        border-radius: 10px;
+        margin: 20px;
+      "
+    >
+      <h2
+        style="
+          text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+            -1px -1px 0 #000;
+          color: #fff;
+        "
+      >
+        R200 000
+      </h2>
+      <p>Revanue</p>
+    </div>
+  </div>
+</div>

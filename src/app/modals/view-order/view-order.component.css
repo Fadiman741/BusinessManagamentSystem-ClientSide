@@ -1,0 +1,21 @@
+ .close-button {
+         background-color: #ff5733;
+         /* Background color */
+         color: #fff;
+         /* Text color */
+         border: none;
+         /* Remove button border */
+         padding: 10px 20px;
+         /* Adjust padding as needed */
+         cursor: pointer;
+         /* Show pointer cursor on hover */
+         border-radius: 5px;
+         /* Rounded corners */
+         font-weight: bold;
+         /* Make text bold */
+ }
+
+ .close-button:hover {
+         background-color: #e53935;
+         /* Change background color on hover */
+ }

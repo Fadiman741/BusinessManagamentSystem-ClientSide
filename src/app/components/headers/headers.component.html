@@ -1,0 +1,75 @@
+<div style="background-color: rgb(58, 62, 68); position: fixed; width: 100%">
+  <div style="display: flex; justify-content: space-between">
+    <div style="display: flex">
+      <div style="height: 80px">
+        <img src="assets/logo/1.png" style="height: 100%" />
+      </div>
+      <h1
+        style="
+          font-weight: 900;
+          color: rgb(243, 243, 243);
+          padding: 16px;
+          text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+            -1px -1px 0 #000;
+        "
+      >
+        FADIMANTECH
+      </h1>
+    </div>
+
+    <div style="display: flex; padding: 30px">
+      <p>Name Surname <span style="color: #aaa">( admin)</span></p>
+      <i
+        class="fa fa-user-circle"
+        aria-hidden="true"
+        style="font-size: 25px; padding-left: 15px"
+      ></i>
+    </div>
+  </div>
+  <div>
+    <div class="navbar">
+      <a routerLink="home">Home</a>
+      <a routerLink="dashboard">Dashboard</a>
+      <!-- <a href="#news">Stock</a> -->
+
+      <!-- <div class="dropdown">
+        <button class="dropbtn">
+          Services
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#service1">Service 1</a>
+          <a href="#service2">Service 2</a>
+          <a href="#service3">Service 3</a>
+        </div>
+      </div> -->
+      <!-- <a href="#contact">Admin</a> -->
+      <!-- <a href="#contact">Businesses</a> -->
+      <a routerLink="/dashboard/stock">Today</a>
+      <a routerLink="cashier">Cashier</a>
+      <a routerLink="order">Order</a>
+    </div>
+  </div>
+</div>
+<!-- <div
+  style="
+    background-color: rgb(243, 243, 243);
+    height: 60vh;
+    padding: 16px;
+    background-image: url('assets/background/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(
+      90deg,
+      rgba(25, 145, 182, 0.767) 0%,
+      rgba(32, 5, 5, 0.02) 100%,
+      url('assets/background/1.jpg')
+    );
+  "
+>
+  <p>homepage works!</p>
+</div> -->
+<div style="height: 15vh"></div>
+<div style="background-color: rgb(58, 62, 68)">
+  <router-outlet></router-outlet>
+</div>

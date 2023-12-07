@@ -1,0 +1,83 @@
+<!-- <app-headers></app-headers> -->
+<section style="background-color: rgb(58, 62, 68)">
+  <div class="dashboard-container">
+    <div class="sidebar">
+      <h2>Sidebar</h2>
+      <hr />
+      <div class="navbar" style="display: flex; flex-direction: column">
+        <a routerLink="/dashboard/employees"
+          ><i
+            class="fa fa-user"
+            aria-hidden="true"
+            style="padding-right: 10px"
+          ></i>
+          Employees</a
+        >
+        <a routerLink="/dashboard/order">
+          <i
+            class="fa fa-list"
+            aria-hidden="true"
+            style="padding-right: 10px"
+          ></i
+          >Orders</a
+        >
+        <a href="#news"
+          ><i
+            class="fa fa-exchange"
+            aria-hidden="true"
+            style="padding-right: 10px"
+          ></i
+          >Businesses</a
+        >
+        <a href="#news" routerLink="/dashboard/products"
+          ><i
+            class="fa fa-cutlery"
+            aria-hidden="true"
+            style="padding-right: 10px"
+          ></i
+          >Menu</a
+        >
+        <a routerLink="sales"
+          ><i
+            class="fa fa-industry"
+            aria-hidden="true"
+            style="padding-right: 10px"
+          ></i
+          >Sales</a
+        >
+
+        <a routerLink="sales"
+          ><i
+            class="fa fa-line-chart"
+            aria-hidden="true"
+            style="padding-right: 10px"
+          ></i
+          >Stock</a
+        >
+        <br />
+
+        <hr />
+        <a routerLink="/dashboard/today">
+          <i
+            class="fa fa-calendar"
+            style="font-size: 17px"
+            style="padding-right: 10px"
+          ></i
+          >What's Happening today</a
+        >
+        <a routerLink="/dashboard/stock"
+          ><i
+            class="fa fa-table"
+            aria-hidden="true"
+            style="padding-right: 10px"
+          ></i>
+          Today's sales</a
+        >
+      </div>
+    </div>
+
+    <div class="main-content" style="background-color: rgb(58, 62, 68)">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>

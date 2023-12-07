@@ -1,0 +1,151 @@
+<div style="padding: 25px">
+  <h2>Open Orders</h2>
+  <table style="width: 100%">
+    <thead>
+      <tr>
+        <th>Order Number</th>
+        <th>Cashier</th>
+        <th>Price</th>
+        <th>Units</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of orderlist">
+      <tr style="margin: 10px">
+        <td>{{ item.ordernumber }}</td>
+        <td>{{ item.cashier.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.units }}</td>
+        <td>{{ item.time }}</td>
+        <td style="color: #4caf50">{{ item.status }}</td>
+        <td style="width: 190px">
+          <button
+            style="
+              background-color: #4caf50;
+              border: none;
+              width: 90px;
+              padding: 5px;
+              border-radius: 4px;
+              margin-right: 10px;
+            "
+            (click)="openModal(item)"
+          >
+            view order
+          </button>
+          <button
+            style="
+              background-color: red;
+              border: none;
+              width: 90px;
+              padding: 5px;
+              border-radius: 4px;
+            "
+            (click)="closeOrder(item)"
+          >
+            close order
+          </button>
+        </td>
+      </tr>
+
+      <!-- <br /> -->
+      <!-- <tr style="margin: 10px">
+        <td>Total</td>
+        <td></td>
+        <td>Price</td>
+        <td>Units</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr> -->
+    </tbody>
+    <br />
+    <tfoot>
+      <tr>
+        <td>Total Price</td>
+        <td></td>
+        <td>{{ calculateTotalPrice() }}</td>
+        <td></td>
+
+        <td colspan="4"></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<hr />
+<div style="padding: 25px">
+  <h2>Completed Orders</h2>
+  <table style="width: 100%">
+    <thead>
+      <tr>
+        <th>Order Number</th>
+        <th>Cashier</th>
+        <th>Price</th>
+        <th>Units</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of closedOrderList">
+      <tr style="margin: 10px">
+        <td>{{ item.ordernumber }}</td>
+        <td>{{ item.Cashier }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.units }}</td>
+        <td>{{ item.time }}</td>
+        <td style="color: red">{{ item.status }}</td>
+        <td style="width: 190px">
+          <button
+            style="
+              background-color: #4caf50;
+              border: none;
+              width: 90px;
+              padding: 5px;
+              border-radius: 4px;
+              margin-right: 10px;
+            "
+            (click)="openModal(item)"
+          >
+            view order
+          </button>
+          <!-- <button
+            style="
+              background-color: #4caf50;
+              border: none;
+              width: 90px;
+              padding: 5px;
+              border-radius: 4px;
+            "
+            (click)="closeOrder(item)"
+          >
+            close order
+          </button> -->
+        </td>
+      </tr>
+
+      <!-- <br /> -->
+      <!-- <tr style="margin: 10px">
+        <td>Total</td>
+        <td></td>
+        <td>Price</td>
+        <td>Units</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr> -->
+    </tbody>
+    <br />
+    <tfoot>
+      <tr>
+        <td>Total Price</td>
+        <td></td>
+        <!-- <td>{{ calculateTotalPrice() }}</td> -->
+        <td></td>
+
+        <td colspan="4"></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

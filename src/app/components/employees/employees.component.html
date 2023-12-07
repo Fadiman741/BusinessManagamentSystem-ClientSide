@@ -1,0 +1,55 @@
+<h2>Employees</h2>
+<!-- <button class="toggle-btn" onclick="toggleAccess()">Toggle Access</button> -->
+
+<!-- Employee data table or other content goes here -->
+<table>
+  <thead>
+    <tr>
+      <th>ID number</th>
+      <th>Name and Surname</th>
+      <th>Address</th>
+      <th>Role</th>
+      <th>Period</th>
+      <th>Contact Number</th>
+      <th>Email</th>
+      <th>status</th>
+      <th>Action</th>
+      <!-- Add more columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Populate employee data dynamically -->
+    <tr *ngFor="let employee of employeelist">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.address }}</td>
+      <td>{{ employee.role }}</td>
+      <td>{{ employee.period }}</td>
+      <td>{{ employee.contactNumber }}</td>
+      <td>{{ employee.email }}</td>
+      <td>activate</td>
+      <td>
+        <div
+          class="icon-container"
+          (mouseenter)="showDropdown = true"
+          (mouseleave)="showDropdown = false"
+        >
+          <i class="fa fa-edit" style="font-size: 14px; color: #aaa"></i>
+          <!-- <fa-icon [icon]="faPenSquare"></fa-icon> -->
+          <div class="dropdown" *ngIf="showDropdown">
+            <ul>
+              <!-- <li><a (click)="editItem(item.id)">Edit</a></li>
+                  <li><a (click)="onDeletePost(item.id)">Delete</a></li>  -->
+              <li (click)="openModal(item)" style="cursor: pointer">
+                <a>Edit</a>
+              </li>
+              <li style="cursor: pointer"><a>Delete</a></li>
+            </ul>
+          </div>
+        </div>
+      </td>
+
+      <!-- Add more rows as needed -->
+    </tr>
+  </tbody>
+</table>

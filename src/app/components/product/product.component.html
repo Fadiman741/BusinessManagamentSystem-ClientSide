@@ -1,0 +1,81 @@
+<div
+  style="
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(58, 62, 68);
+  "
+>
+  <h1>Menu</h1>
+  <button
+    (click)="openModal()"
+    style="border-radius: 5px; background-color: rgb(30, 33, 42); color: #fff"
+  >
+    Add Menu
+  </button>
+</div>
+<br />
+<hr />
+<br />
+<h2 style="padding-left: 10px">Food</h2>
+
+<div style="display: flex; flex-wrap: wrap">
+  <div
+    *ngFor="let item of meal_list"
+    style="
+      border: 1px solid #ccc;
+      margin: 10px;
+      max-width: 500px;
+      min-width: 430px;
+
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+    "
+  >
+    <div style="display: flex">
+      <div style="width: 180px">
+        <img
+          src="{{ item.url }}"
+          style="width: 100%; height: 100%; border-radius: 10px"
+        />
+      </div>
+      <div style="padding-left: 20px">
+        <h4 style="text-transform: uppercase; color: #444444">
+          {{ item.Name }}
+        </h4>
+        <p style="color: #444444">{{ item.category }} | {{ item.tags }}</p>
+        <br />
+        <div style="height: 70px">
+          <p style="color: #444444">Ingridience {{ item.tags }}</p>
+        </div>
+        <p style="color: #757575">R {{ item.price }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<hr />
+<br />
+<h2 style="padding-left: 10px">Softdrinks</h2>
+<div style="display: flex; flex-wrap: wrap">
+  <div class="product" *ngFor="let item of softdrinks">
+    <div style="max-width: 200px">
+      <img [src]="item.url" alt="Product Image" style="width: 100%" />
+    </div>
+    <h4>{{ item.Name }}</h4>
+    <p>R {{ item.price }}</p>
+  </div>
+</div>
+<br />
+<hr />
+<br />
+<h2 style="padding-left: 10px">Alcohol</h2>
+<div style="display: flex; flex-wrap: wrap">
+  <div class="product" *ngFor="let item of alcohol">
+    <div style="max-width: 200px">
+      <img [src]="item.url" alt="Product Image" style="width: 100%" />
+    </div>
+    <h4>{{ item.Name }}</h4>
+    <p>R {{ item.price }}</p>
+  </div>
+</div>

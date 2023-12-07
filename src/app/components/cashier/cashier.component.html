@@ -1,0 +1,127 @@
+<!-- <app-headers></app-headers> -->
+<div style="display: flex">
+  <div class="container">
+    <div class="product-list">
+      <h2 style="padding-left: 10px">Pupular products</h2>
+      <div style="display: flex; flex-wrap: wrap">
+        <div class="product" *ngFor="let item of meal_list">
+          <div style="max-width: 200px; max-height: 200px">
+            <img
+              [src]="item.url"
+              alt="Product Image"
+              style="width: 100%; height: 100%"
+            />
+          </div>
+          <h3 style="background-color: #fff; padding-top: 10px">
+            {{ item.Name }}
+          </h3>
+          <p style="background-color: #fff">Description of Product 1.</p>
+          <p style="background-color: #fff">R {{ item.price }}</p>
+          <button class="add-to-cart" (click)="addToOrder(item)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <!-- BEVERAGES -->
+      <br />
+      <h2 style="padding-left: 10px">Softdrinks</h2>
+      <div style="display: flex">
+        <div class="product" *ngFor="let item of softdrinks">
+          <div style="max-width: 200px; max-height: 200px">
+            <img [src]="item.url" alt="Product Image" style="width: 100%" />
+          </div>
+          <h3 style="background-color: #fff">{{ item.Name }}</h3>
+          <p style="background-color: #fff">Description of Product 1.</p>
+          <p style="background-color: #fff">R {{ item.price }}</p>
+          <button class="add-to-cart" (click)="addToOrder(item)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+      <br />
+      <h2 style="padding-left: 10px">Alcohol</h2>
+      <div style="display: flex">
+        <div class="product" *ngFor="let item of alcohol">
+          <div style="max-width: 200px; max-height: 200px">
+            <img [src]="item.url" alt="Product Image" style="width: 100%" />
+          </div>
+          <h3 style="background-color: #fff">{{ item.Name }}</h3>
+          <p style="background-color: #fff">Description of Product 1.</p>
+          <p style="background-color: #fff">R {{ item.price }}</p>
+          <button class="add-to-cart" (click)="addToOrder(item)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Add more products as needed -->
+    </div>
+  </div>
+  <div style="max-width: 600px">
+    <div class="cart" style="margin: 20px">
+      <h2 style="padding-left: 20px; background-color: #fff">Order</h2>
+
+      <div
+        *ngFor="let cartItem of cart"
+        style="
+          box-shadow: 1px 2px 11px 3px rgba(221, 221, 221, 0.75);
+          padding: 10px;
+          margin: 15px;
+          border-radius: 5px;
+          background-color: rgb(58, 62, 68);
+        "
+      >
+        <div style="display: flex; padding: 20px">
+          <div style="max-width: 80px">
+            <img
+              [src]="cartItem.url"
+              alt="Product Image"
+              style="width: 100%; border-radius: 7px"
+            />
+          </div>
+          <div
+            style="display: flex; flex-direction: column; padding-left: 15px"
+          >
+            <span
+              ><b>{{ cartItem.Name }}</b></span
+            >
+            <span>R{{ cartItem.price }} x {{ cartItem.quantity }}</span>
+            <button
+              style="
+                background-color: red;
+                border: none;
+                border-radius: 5px;
+                margin-top: 10px;
+              "
+              (click)="removeFromCart(cartItem)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- Add more cart items as needed -->
+      <hr style="margin-left: 20px; margin-right: 20px" />
+      <div style="padding-left: 20px; background-color: #fff">
+        <div class="cart-total" style="background-color: #fff; color: #4b4b4b">
+          Total: R {{ calculateTotalPrice(cart) }}
+        </div>
+        <button
+          style="
+            background-color: #4caf50;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 20px;
+          "
+          (click)="placeOrder()"
+        >
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

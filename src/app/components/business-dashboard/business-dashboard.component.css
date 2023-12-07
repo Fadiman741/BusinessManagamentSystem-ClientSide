@@ -1,0 +1,52 @@
+      
+
+      header {
+               background-color: #333;
+               color: white;
+               text-align: center;
+               padding: 10px;
+       }
+
+       nav {
+               background-color: #555;
+               color: white;
+               padding: 10px;
+               text-align: center;
+       }
+
+       section {
+               /* padding: 16px; */
+               min-height: 83vh;
+       }
+
+       .dashboard-container {
+               display: flex;
+       }
+
+       .sidebar {
+               width: 300px;
+        background-color: rgb(30, 33, 42);
+               color: white;
+               padding: 25px;
+        border-radius: 20px;
+        height: 500px;
+        margin: 16px;
+       }
+
+       .main-content {
+               flex: 1;
+               padding: 10px;
+       }
+       a{
+        text-decoration: none;
+        padding-top: 10px;
+        background-color: rgb(30, 33, 42);
+       }
+       i{
+        background-color: rgb(30, 33, 42);
+       }
+       
+.fa{
+        padding-right: 15px;
+        background-color: rgb(30, 33, 42);
+}
