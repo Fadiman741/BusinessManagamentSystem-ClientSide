@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/modals/modal.service';
 
 @Component({
   selector: 'app-headers',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService:ModalService) { }
 
   ngOnInit() {
+  }
+  openModal(): void {
+      this.modalService.Subscribe();
   }
 
 }

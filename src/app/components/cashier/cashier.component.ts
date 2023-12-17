@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cashier',
@@ -17,7 +18,7 @@ export class CashierComponent implements OnInit {
   cart: any[] = [];
   orderCounter = 1;
 
-  constructor(private apiservice: ApiService) { }
+  constructor(private apiservice: ApiService,private toastr: ToastrService) { }
 
   ngOnInit() {
     this.Menulist()
@@ -67,7 +68,9 @@ export class CashierComponent implements OnInit {
   placeOrder(): void {
     const orderNumber = new Date().getTime();
     // Handle placing the order, e.g., send the order to a backend service
-    console.log('Placing Order:' ,{ orderNumber, items: this.cart });
+    console.log('Placing Order:', { orderNumber, items: this.cart });
+    this.toastr.success('Data saved successfully', 'Success');
+    
     // Clear the cart after placing the order
     this.cart = [];
     this.orderCounter++;

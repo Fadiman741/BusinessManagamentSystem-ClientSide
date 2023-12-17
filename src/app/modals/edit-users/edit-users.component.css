@@ -17,16 +17,26 @@ body {
         margin-bottom: 10px;
 }
 
+
 label {
         /* font-weight: bold; */
         display: block;
         padding-bottom: 5px;
+        color: #aaaaaa;
+                
 }
+ option {
+         color: #aaa;
+ }
+ ::placeholder {
+         color: #aaa;
+ }
 
 input[type="text"],
 input[type="email"],
 select {
         width: 100%;
+        color: #8b8a8a;;
         height: 40px;
         padding: 10px;
         border: 1px solid #ccc;

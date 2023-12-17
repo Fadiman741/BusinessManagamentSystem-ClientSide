@@ -10,12 +10,17 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ViewOrderComponent implements OnInit {
 
+ 
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: any ,public dialogRef: MatDialogRef<ViewOrderComponent>) { }
 
   ngOnInit() {
   }
   closeDialog(): void {
     this.dialogRef.close();
+  }
+    calculateTotalPrice(cart: any[]): number {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
 }

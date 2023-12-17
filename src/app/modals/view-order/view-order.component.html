@@ -1,5 +1,81 @@
 <div style="padding: 40px">
-  <h1>{{ data.ordernumber }}</h1>
-  <p>view-order works!</p>
+  <h1>Order Number: {{ data.ordernumber }}</h1>
+  <div style="max-width: 600px">
+    <div class="cart" style="margin: 20px">
+      <h2 style="padding-left: 20px; background-color: #1b1b1b">Order</h2>
+
+      <!-- <div
+        *ngFor="let cartItem of menu"
+        style="
+          box-shadow: 1px 2px 11px 3px rgba(221, 221, 221, 0.75);
+          padding: 10px;
+          margin: 15px;
+          border-radius: 5px;
+          background-color: rgb(58, 62, 68);
+        "
+      >
+        <div style="display: flex; padding: 20px">
+          <div style="max-width: 80px">
+            <img
+              [src]="cartItem.url"
+              alt="Product Image"
+              style="width: 100%; border-radius: 7px"
+            />
+          </div>
+          <div
+            style="display: flex; flex-direction: column; padding-left: 15px"
+          >
+            <span
+              ><b>{{ cartItem.Name }}</b></span
+            >
+            <span>R{{ cartItem.price }} x {{ cartItem.quantity }}</span>
+          </div>
+        </div>
+      </div>
+      <br />
+      <hr style="margin-left: 20px; margin-right: 20px" />
+      <div style="padding-left: 20px; background-color: #fff">
+        <div class="cart-total" style="background-color: #fff; color: #4b4b4b">
+          Total: R {{ calculateTotalPrice(cart) }}
+        </div>
+      </div> -->
+
+      <div
+        style="
+          box-shadow: 1px 2px 11px 3px rgba(221, 221, 221, 0.75);
+          padding: 10px;
+          margin: 15px;
+          border-radius: 5px;
+          background-color: rgb(58, 62, 68);
+        "
+      >
+        <div style="display: flex; padding: 20px">
+          <div style="max-width: 80px">
+            <img
+              [src]="data.url"
+              alt="Product Image"
+              style="width: 100%; border-radius: 7px"
+            />
+          </div>
+          <div
+            style="display: flex; flex-direction: column; padding-left: 15px"
+          >
+            <span
+              ><b>{{ data.Name }}</b></span
+            >
+            <span>R{{ data.price }} x {{ data.quantity }}</span>
+          </div>
+        </div>
+      </div>
+      <br />
+      <hr style="margin-left: 20px; margin-right: 20px" />
+      <div style="padding-left: 20px; background-color: #fff">
+        <div class="cart-total" style="background-color: #fff; color: #4b4b4b">
+          Total: R 2 000
+        </div>
+      </div>
+    </div>
+  </div>
+
   <button mat-button class="close-button" (click)="closeDialog()">Close</button>
 </div>

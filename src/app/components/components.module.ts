@@ -5,6 +5,8 @@ import { ComponentRoutingModule } from './components-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 // import { FormsModule } from '@angular/forms';
@@ -22,6 +24,7 @@ import { HeadersComponent } from './headers/headers.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EditUsersComponent } from '../modals/edit-users/edit-users.component';
+import { StockComponent } from './stock/stock.component';
 
 @NgModule({
   imports: [
@@ -29,11 +32,17 @@ import { EditUsersComponent } from '../modals/edit-users/edit-users.component';
     ComponentRoutingModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-top-right',
+      closeButton: true,
+      progressBar: true,
+    }),
     // FormsModule,
   ],
 
-  declarations: [UserComponent ,SuperAdminComponent,SaleManagerComponent,ProductComponent,EmployeeComponent,BusinessDashboardComponent,BusinessAdminComponent,OrderlistComponent,ViewOrderComponent,CashierComponent,HeadersComponent,HomepageComponent,EmployeesComponent,EditUsersComponent, ProductComponent ]
+  declarations: [UserComponent ,SuperAdminComponent,SaleManagerComponent,ProductComponent,EmployeeComponent,BusinessDashboardComponent,BusinessAdminComponent,OrderlistComponent,ViewOrderComponent,CashierComponent,HeadersComponent,HomepageComponent,EmployeesComponent,EditUsersComponent, ProductComponent,StockComponent ]
 })
 
 export class ComponentsModule { }

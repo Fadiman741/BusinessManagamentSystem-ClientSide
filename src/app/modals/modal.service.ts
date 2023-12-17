@@ -3,6 +3,7 @@ import { MatDialog ,MatDialogRef,  } from '@angular/material/dialog';
 import {ViewOrderComponent} from './view-order/view-order.component'
 import { EditUsersComponent } from './edit-users/edit-users.component';
 import { AddMenuComponent } from './add-menu/add-menu.component';
+import { SubscribeModalComponent } from './subscribe-modal/subscribe-modal.component';
 
 @Injectable({
   providedIn: 'root',
@@ -38,6 +39,18 @@ export class ModalService {
   AddMenu(): void {
     const dialogRef =  this.dialog.open(AddMenuComponent, {
       width: '600px',
+     
+      // height: '500px',
+      // data: { title, message },
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('Modal closed');
+    });
+  }
+  Subscribe(): void {
+    const dialogRef =  this.dialog.open(SubscribeModalComponent , {
+      width: '1200px',
      
       // height: '500px',
       // data: { title, message },

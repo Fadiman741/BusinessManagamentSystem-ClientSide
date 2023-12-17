@@ -18,7 +18,19 @@
     </div>
 
     <div style="display: flex; padding: 30px">
-      <p>Name Surname <span style="color: #aaa">( admin)</span></p>
+      <div
+        (click)="openModal()"
+        style="
+          padding-right: 20px;
+          cursor: pointer;
+          border-right: 2px solid #858484;
+        "
+      >
+        Subscribe
+      </div>
+      <p style="padding-left: 20px">
+        Name Surname <span style="color: #aaa">( admin)</span>
+      </p>
       <i
         class="fa fa-user-circle"
         aria-hidden="true"

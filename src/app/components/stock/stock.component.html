@@ -13,11 +13,18 @@
     </thead>
     <tbody>
       <!-- Populate employee data dynamically -->
-      <tr>
-        <td>Cock tails</td>
-        <td>25</td>
-        <td>R 235 000</td>
+      <tr *ngFor="let item of totalsales">
+        <td>{{ item.productName }}</td>
+        <td>{{ item.units }}</td>
+        <td>{{ item.sales }}</td>
         <!-- Add more rows as needed -->
+      </tr>
+      <br />
+
+      <tr style="border: 1px solid #aaa">
+        <td>Total</td>
+        <td>{{ calculateTotals().totalUnits }}</td>
+        <td>R {{ calculateTotals().totalSales }}</td>
       </tr>
     </tbody>
   </table>
