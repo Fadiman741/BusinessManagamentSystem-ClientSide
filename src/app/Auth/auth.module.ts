@@ -5,10 +5,14 @@ import { SigninComponent } from './signin/signin.component';
 import {HomePageComponent} from './home-page/home-page.component'
 import { AuthRoutingModule } from './auth-routing.module';
 
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    FormsModule
   ],
   declarations: [SignupComponent,SigninComponent,HomePageComponent]
 })

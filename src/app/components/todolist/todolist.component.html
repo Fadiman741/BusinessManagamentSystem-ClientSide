@@ -1,0 +1,5 @@
+<div *ngFor="let task of tasks">
+  {{ task.title }} - {{ task.completed ? "Completed" : "Pending" }}
+</div>
+<!-- <input type="text" [(ngModel)]="newTask" placeholder="New task" />
+<button (click)="createTask(newTask)">Add Task</button> -->

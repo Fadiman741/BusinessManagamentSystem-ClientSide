@@ -18,24 +18,38 @@
     </div>
 
     <div style="display: flex; padding: 30px">
-      <div
+      <!-- <div
         (click)="openModal()"
         style="
           padding-right: 20px;
           cursor: pointer;
-          border-right: 2px solid #858484;
+          color: #ddd;
+          border-right: 1px solid #858484;
         "
       >
         Subscribe
-      </div>
-      <p style="padding-left: 20px">
-        Name Surname <span style="color: #aaa">( admin)</span>
+      </div> -->
+      <a (click)="Logout()">logout</a>
+      <p style="padding-left: 20px; color: #ddd">
+        Name Surname
+        <span style="color: #aaa"> ( admin)</span>
       </p>
-      <i
+      <div
+        style="
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin-left: 10px;
+          background-color: #e0e0e0;
+        "
+      >
+        <p style="padding: 4px">{{ getInitials() }}</p>
+      </div>
+      <!-- <i
         class="fa fa-user-circle"
         aria-hidden="true"
         style="font-size: 25px; padding-left: 15px"
-      ></i>
+        >{{ getInitials() }}</i -->
     </div>
   </div>
   <div>

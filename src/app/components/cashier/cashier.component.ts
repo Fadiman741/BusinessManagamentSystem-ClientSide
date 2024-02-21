@@ -17,6 +17,7 @@ export class CashierComponent implements OnInit {
 
   cart: any[] = [];
   orderCounter = 1;
+  order: any;
 
   constructor(private apiservice: ApiService,private toastr: ToastrService) { }
 
@@ -28,11 +29,26 @@ export class CashierComponent implements OnInit {
   //   this.orderList.push(item);
   // }
   Menulist() {
-    this.menu = this.apiservice.Menu;
-    console.log(this.apiservice.Menu);
-    this.meal_list = this.apiservice.Menu.filter(item => item.category === "meal");
-    this.alcohol = this.apiservice.Menu.filter(item => item.category === "alcohol");
-    this.softdrinks = this.apiservice.Menu.filter(item => item.category === "softdrinks");
+    this.apiservice.getAllMenu().subscribe(
+      data => {
+        this.menu = data;
+        console.log(this.menu);
+        this.meal_list = this.menu.filter((item: { category: string; }) => item.category === "meal");
+        console.log(this.meal_list);
+      
+        this.alcohol = this.menu.filter((item: { category: string; }) => item.category === "alcohol");
+        console.log(this.alcohol);
+      
+        this.softdrinks = this.menu.filter((item: { category: string; }) => item.category === "softdrinks");
+        console.log(this.softdrinks);
+        
+      },
+      error => {
+        console.log(error);
+      }
+    );
+    // console.log(this.menu);
+    
 
   }
   addToOrder(item: any): void {
@@ -65,14 +81,47 @@ export class CashierComponent implements OnInit {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
-  placeOrder(): void {
-    const orderNumber = new Date().getTime();
-    // Handle placing the order, e.g., send the order to a backend service
-    console.log('Placing Order:', { orderNumber, items: this.cart });
-    this.toastr.success('Data saved successfully', 'Success');
+  // proceedOrder(): void {
+  //   const orderNumber = new Date().getTime();
+  //   console.log('Placing Order:', { orderNumber, items: this.cart });
+  //   this.toastr.success('Data saved successfully', 'Success');
+  //   this.cart = [];
+  //   this.orderCounter++;
+  // }
+  proceedOrder(): void {
+
+  const orderData = {
+    items: this.cart
+  };
+   this.apiservice.placeOrder(orderData).subscribe(
+    response => {
+      this.order = response;
+      // console.log(this.order);
+      console.log('Order placed successfully:', response);
+      this.toastr.success('Data saved successfully', 'Success');
+      this.cart = []; // Clear cart only after successful order placement
+      this.orderCounter++;
+    },
+    error => {
+      this.toastr.error('Order failed', 'Error');
+      console.error('Error placing order:', error);
+    }
+  );
+
+    // this.apiservice.placeOrder(this.cart).subscribe(
+    //   response => {
+    //     this.order = response;
+    //     console.log(this.order);
+    //     console.log('Order placed successfully:', response);
+    //     this.toastr.success('Data saved successfully', 'Success');
+    //     this.cart = [];
+    //     this.orderCounter++;
+    //   },
+    //   error => {
+    //     console.error('Error placing order:', error);
+    //   }
+    // );
     
-    // Clear the cart after placing the order
-    this.cart = [];
-    this.orderCounter++;
   }
+  // this.cart = [];
 }

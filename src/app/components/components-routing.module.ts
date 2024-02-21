@@ -16,38 +16,46 @@ import { OrderlistComponent } from './orderlist/orderlist.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { StockComponent } from './stock/stock.component';
 import { HeadersComponent } from './headers/headers.component';
-
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { TodolistComponent } from './todolist/todolist.component'
+import { BusinessRegistrationComponent } from './business-registration/business-registration.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 
 
 const routes: Routes = [
   {
+
     path: '',
     component: HeadersComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomepageComponent },
-      { path: 'users', component: UserComponent },
-      { path: 'superadmins', component: SuperAdminComponent },
-      { path: 'businessadmins', component: BusinessAdminComponent },
-      { path: 'employees', component: EmployeeComponent },
-      { path: 'products', component: ProductComponent },
-      { path: 'sales', component: SaleManagerComponent },
+      { path: 'home', component: HomepageComponent,canActivate: [AuthGuard] },
+      { path: 'users', component: UserComponent ,canActivate: [AuthGuard]},
+      { path: 'superadmins', component: SuperAdminComponent ,canActivate: [AuthGuard] },
+      { path: 'businessadmins', component: BusinessAdminComponent ,canActivate: [AuthGuard]},
+      { path: 'employees', component: EmployeeComponent ,canActivate: [AuthGuard] },
+      { path: 'products', component: ProductComponent ,canActivate: [AuthGuard]},
+      { path: 'sales', component: SaleManagerComponent ,canActivate: [AuthGuard]},
+      { path: 'business-registration', component:BusinessRegistrationComponent ,canActivate: [AuthGuard]},
+      
       {
         path: 'dashboard',
         component: BusinessDashboardComponent,
         children: [
           { path: '', redirectTo: 'employees', pathMatch: 'full' },
-          { path: 'today', component: TodayComponent },
-          { path: 'order', component: OrderlistComponent },
-          { path: 'employees', component: EmployeesComponent },
-          { path: 'stock', component: StockComponent },
-          { path: 'cashier', component: CashierComponent },
-          { path: 'products', component:ProductComponent}
+          { path: 'today', component: TodayComponent ,canActivate: [AuthGuard] },
+          { path: 'order', component: OrderlistComponent ,canActivate: [AuthGuard]},
+          { path: 'employees', component: EmployeesComponent ,canActivate: [AuthGuard]},
+          { path: 'stock', component: StockComponent ,canActivate: [AuthGuard]},
+          { path: 'cashier', component: CashierComponent ,canActivate: [AuthGuard]},
+          { path: 'products', component: ProductComponent ,canActivate: [AuthGuard]},
+          {path: 'todo-list', component:TodolistComponent ,canActivate: [AuthGuard]}
         ]
       },
-      { path: 'cashier', component: CashierComponent }, // Move this line outside of 'dashboard' children
-      { path: 'order', component: OrderlistComponent }
+      { path: 'cashier', component: CashierComponent ,canActivate: [AuthGuard]}, 
+      { path: 'order', component: OrderlistComponent ,canActivate: [AuthGuard]},
+      // {path:"**", component: PagenotfoundComponent},
     ],
   }
 ];

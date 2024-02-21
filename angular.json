@@ -65,12 +65,16 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+                "proxyConfig": "src/proxy.conf.json"
+                  },
           "configurations": {
             "production": {
               "browserTarget": "businessmanagement:build:production"
-            },
+            },  
             "development": {
-              "browserTarget": "businessmanagement:build:development"
+              "browserTarget": "businessmanagement:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -79,6 +83,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "businessmanagement:build"
+           
           }
         },
         "test": {

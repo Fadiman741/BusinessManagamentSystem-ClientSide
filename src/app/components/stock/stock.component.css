@@ -21,3 +21,10 @@ th {
         background-color: #cacaca;
         color: rgb(78, 78, 78);
 }
+input{
+        background-color: rgb(30, 33, 42);
+        border-radius: 5px;
+        margin-left: 5px;
+        border: none;
+        padding: 5px;
+}

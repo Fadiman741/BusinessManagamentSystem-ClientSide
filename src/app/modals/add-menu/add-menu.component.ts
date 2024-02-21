@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-add-menu',
@@ -7,18 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddMenuComponent implements OnInit {
 
-  cars = [ 
-    { id: 1, name: "BMW Hyundai" }, 
-    { id: 2, name: "Kia Tata" }, 
-    { id: 3, name: "Volkswagen Ford" }, 
-    { id: 4, name: "Renault Audi" }, 
-    { id: 5, name: "Mercedes Benz Skoda" }, 
-  ]; 
-  selected = [{ id: 3, name: "Volkswagen Ford" }]; 
+elected = [{ id: 3, name: "Volkswagen Ford" }]; 
 
-  constructor() { }
+   @ViewChild('menuForm') menuForm!: NgForm;
+
+  constructor(private apiservice:ApiService) { }
 
   ngOnInit() {
   }
 
+  AddMenu(form: NgForm) {
+    if (form.valid) {
+      const menu = {
+        name: form.value.Name,
+        Description: form.value.Description,
+        Price: form.value.Price,
+        Category: form.value.Category,
+        img: form.value.img
+      };
+      this.apiservice.create_Menu(menu).subscribe(
+        (response) => {
+          console.log('Menu Added successful:', response);
+          form.resetForm();
+        },
+        (error) => {
+          console.error('Menu  failed:', error);
+        }
+        
+      );
+
+    }
+  }
 }
